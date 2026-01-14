@@ -31,7 +31,7 @@ export const navData = [
     path: '/sections',
     icon: <FaEye />,
   },
-  
+
   {
     title: 'Global Setting',
     path: '/global',
@@ -61,6 +61,11 @@ export const navData = [
   {
     title: 'Contact Me Section',
     path: '/contact-section',
+    icon: <MdOutlineContactEmergency />,
+  },
+  {
+    title: 'Skills Section',
+    path: '/skills-section',
     icon: <MdOutlineContactEmergency />,
   },
 

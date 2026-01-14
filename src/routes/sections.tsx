@@ -28,6 +28,9 @@ export const PortfolioSection = lazy(() => import('src/pages/porfolitoSection'))
 export const ContactSection = lazy(() => import('src/pages/contactSection'));
 export const GlobalSetting = lazy(() => import('src/pages/GlobalSetting'));
 export const PortfolioDetails = lazy(() => import('src/pages/PortfolioDetails'));
+export const SkillsSection = lazy(() => import('src/pages/SkillsSection'));
+
+
 
 const renderFallback = () => (
   <Box
@@ -75,6 +78,7 @@ export const routesSection: RouteObject[] = [
       { path: 'portfolio-section/:id', element: <PortfolioDetails /> },
       { path: 'portfolio-section/create', element: <PortfolioCreate /> },
       { path: 'contact-section', element: <ContactSection /> },
+      { path: 'skills-section', element: <SkillsSection /> },
     ],
   },
   {

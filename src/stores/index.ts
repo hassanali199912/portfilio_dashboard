@@ -5,6 +5,7 @@ import GlobalSettingReducers from "./slices/global"
 import SocialReducers from "./slices/social"
 import ProfileReducers from "./slices/profile"
 import PortfolioReducers from "./slices/portfolio"
+import SkillsReducers from "./slices/skills"
 
 
 export const store = configureStore({
@@ -13,7 +14,8 @@ export const store = configureStore({
         global: GlobalSettingReducers,
         social: SocialReducers,
         profile: ProfileReducers,
-        portfolio: PortfolioReducers
+        portfolio: PortfolioReducers,
+        skills: SkillsReducers
     }
 });
 
