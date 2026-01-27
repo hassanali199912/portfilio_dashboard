@@ -1,7 +1,6 @@
 import { Box } from "@mui/material"
 import { useCallback, useState } from "react";
-import { FiltersProps, ProductFilters } from "../product/product-filters";
-import { ProductSort } from "../product/product-sort";
+
 
 const GENDER_OPTIONS = [
     { value: 'men', label: 'Men' },
@@ -50,7 +49,7 @@ export default function CardFilters() {
 
     const [openFilter, setOpenFilter] = useState(false);
 
-    const [filters, setFilters] = useState<FiltersProps>(defaultFilters);
+    // const [filters, setFilters] = useState<FiltersProps>(defaultFilters);
 
     const handleOpenFilter = useCallback(() => {
         setOpenFilter(true);
@@ -64,13 +63,13 @@ export default function CardFilters() {
         setSortBy(newSort);
     }, []);
 
-    const handleSetFilters = useCallback((updateState: Partial<FiltersProps>) => {
-        setFilters((prevValue) => ({ ...prevValue, ...updateState }));
-    }, []);
+    // const handleSetFilters = useCallback((updateState: Partial<FiltersProps>) => {
+    //     setFilters((prevValue) => ({ ...prevValue, ...updateState }));
+    // }, []);
 
-    const canReset = Object.keys(filters).some(
-        (key) => filters[key as keyof FiltersProps] !== defaultFilters[key as keyof FiltersProps]
-    );
+    // const canReset = Object.keys(filters).some(
+    //     (key) => filters[key as keyof FiltersProps] !== defaultFilters[key as keyof FiltersProps]
+    // );
     return <>
 
         <Box
@@ -83,7 +82,7 @@ export default function CardFilters() {
             }}
         >
 
-            <Box
+            {/* <Box
                 sx={{
                     my: 1,
                     gap: 1,
@@ -118,7 +117,7 @@ export default function CardFilters() {
                         { value: 'priceAsc', label: 'Price: Low-High' },
                     ]}
                 />
-            </Box>
+            </Box> */}
         </Box>
 
     </>

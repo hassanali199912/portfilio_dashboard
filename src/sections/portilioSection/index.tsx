@@ -3,8 +3,7 @@ import { Box, Button, Grid, ListItem, Typography } from "@mui/material"
 import { DashboardContent } from "src/layouts/dashboard"
 import PortfolioCard, { CardSkeleton } from "./PortfolioCard"
 import { useCallback, useEffect, useState } from "react";
-import { FiltersProps, ProductFilters } from "../product/product-filters";
-import { ProductSort } from "../product/product-sort";
+
 import CardFilters from "./CardFilters";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "src/stores";

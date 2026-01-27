@@ -1,12 +1,8 @@
 import { Box, Button, Grid, ListItem, Typography } from "@mui/material"
 
 import { DashboardContent } from "src/layouts/dashboard"
-import AboutEdit from "./AboutEdit";
-import AboutPreview from "./AboutPreview";
 import { useCallback, useState } from "react";
-import PortfolioCard from "../portilioSection/PortfolioCard";
-import { FiltersProps, ProductFilters } from "../product/product-filters";
-import { ProductSort } from "../product/product-sort";
+
 
 const intialData = {
     image: "https://media.licdn.com/dms/image/v2/D4D03AQHclqSIUi8W6g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728854185923?e=1768435200&v=beta&t=i1T-rb5wb-z2eGY4p21u8fQVvWy8RWyr-eP0xehtiEo",
@@ -84,7 +80,7 @@ export default function HeroSection() {
 
     const [openFilter, setOpenFilter] = useState(false);
 
-    const [filters, setFilters] = useState<FiltersProps>(defaultFilters);
+    // const [filters, setFilters] = useState<FiltersProps>(defaultFilters);
 
     const handleOpenFilter = useCallback(() => {
         setOpenFilter(true);
@@ -98,13 +94,13 @@ export default function HeroSection() {
         setSortBy(newSort);
     }, []);
 
-    const handleSetFilters = useCallback((updateState: Partial<FiltersProps>) => {
-        setFilters((prevValue) => ({ ...prevValue, ...updateState }));
-    }, []);
+    // const handleSetFilters = useCallback((updateState: Partial<FiltersProps>) => {
+    //     setFilters((prevValue) => ({ ...prevValue, ...updateState }));
+    // }, []);
 
-    const canReset = Object.keys(filters).some(
-        (key) => filters[key as keyof FiltersProps] !== defaultFilters[key as keyof FiltersProps]
-    );
+    // const canReset = Object.keys(filters).some(
+    //     (key) => filters[key as keyof FiltersProps] !== defaultFilters[key as keyof FiltersProps]
+    // );
     return <>
 
         <DashboardContent maxWidth={"xl"}>
@@ -121,16 +117,16 @@ export default function HeroSection() {
                 </Typography>
 
             </Box >
-                <Box
-                    sx={{
-                        mb: 5,
-                        display: 'flex',
-                        alignItems: 'center',
-                        flexWrap: 'wrap-reverse',
-                        justifyContent: 'flex-end',
-                    }}
-                >
-                    <Box
+            <Box
+                sx={{
+                    mb: 5,
+                    display: 'flex',
+                    alignItems: 'center',
+                    flexWrap: 'wrap-reverse',
+                    justifyContent: 'flex-end',
+                }}
+            >
+                {/* <Box
                         sx={{
                             my: 1,
                             gap: 1,
@@ -165,8 +161,8 @@ export default function HeroSection() {
                                 { value: 'priceAsc', label: 'Price: Low-High' },
                             ]}
                         />
-                    </Box>
-                </Box>
+                    </Box> */}
+            </Box>
 
 
             {/* {edit ? (

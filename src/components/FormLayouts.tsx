@@ -2,21 +2,25 @@ import { ZodSchema } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, DefaultValues, FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
-import { Box, Button, FormControl, FormHelperText, Grid, Input, InputLabel, TextareaAutosize, TextField } from "@mui/material";
+import { Box, Button, FormControl, FormHelperText, Grid, Input, InputLabel, MenuItem, TextareaAutosize, TextField } from "@mui/material";
 
 
-
+export interface SelectOption {
+    label: string;
+    value: string | number;
+}
 
 export interface FormLayoutItem<T> {
     name: string;
     label: string;
-    type?: "text" | "email" | "password" | "number" | "text_area";
+    type?: "text" | "email" | "password" | "number" | "text_area" | "select";
     grid?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
     placeholder?: string;
     disabled?: boolean;
-    minRow?: number
-
+    minRow?: number,
+    options?: SelectOption[]
 }
+
 
 interface FormLayoutsProps<T extends FieldValues> {
     layout: FormLayoutItem<T>[];
@@ -74,6 +78,7 @@ export function FormLayouts<T extends FieldValues>({
                                 error={!!errors[field.name]}
                                 errorMessage={errors[field.name]?.message as string}
                                 minRow={field.minRow}
+                                options={field.options}
 
                             />
                         )}
@@ -89,7 +94,7 @@ export function FormLayouts<T extends FieldValues>({
 export interface FormFieldProps {
     name: string;
     label: string;
-    type?: "text" | "email" | "password" | "number" | "text_area";
+    type?: "text" | "email" | "password" | "number" | "text_area" | "select";
     value?: string | number;
     minRow?: number,
     onChange: (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => void;
@@ -103,6 +108,7 @@ export interface FormFieldProps {
     errorMessage?: string;
 
     disabled?: boolean;
+    options?: SelectOption[]
 }
 
 export const FormComponent = ({
@@ -117,7 +123,11 @@ export const FormComponent = ({
     error = false,
     errorMessage,
     disabled = false,
-    minRow = 8
+    minRow = 8,
+    options = [{
+        label: "",
+        value: ""
+    }]
 }: FormFieldProps) => {
 
 
@@ -144,6 +154,35 @@ export const FormComponent = ({
             </FormControl>
         </Grid>
     </>
+    if (type === "select") {
+        return (
+            <Grid size={grid}>
+                <FormControl fullWidth error={error} disabled={disabled}>
+                    <TextField
+                        select
+                        label={label}
+                        name={name}
+                        value={value ?? ""}
+                        onChange={onChange}
+                        placeholder={placeholder}
+                    >
+                        {options?.map((option) => (
+                            <MenuItem key={option.value} value={option.value}>
+                                {option.label}
+                            </MenuItem>
+                        ))}
+                    </TextField>
+
+                    {(helperText || errorMessage) && (
+                        <FormHelperText>
+                            {error ? errorMessage : helperText}
+                        </FormHelperText>
+                    )}
+                </FormControl>
+            </Grid>
+        );
+    }
+
 
     return <>
         <Grid size={grid}>

@@ -106,9 +106,13 @@ const PortfolioView = ({ data }: Props) => {
 const LocalizedSection = ({ title, name, textArea = false, disabled = false }: { title: string; name: any, textArea?: boolean, disabled?: boolean }) => {
     const { control, formState: { errors }
     } = useFormContext();
+    const fieldErrors = errors?.[name] as {
+        ar?: { message?: string };
+        en?: { message?: string };
+    };
 
-    const arError = errors?.[name]?.ar?.message;
-    const enError = errors?.[name]?.en?.message;
+    const arError = fieldErrors?.ar?.message;
+    const enError = fieldErrors?.en?.message;
     return (
         <>
             <Card sx={{ mb: 3, p: 3 }} >

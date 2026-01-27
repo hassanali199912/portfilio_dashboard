@@ -34,7 +34,7 @@ interface ModelResublePorps {
 export default function ModelReusable({
     top = "30%",
     left = "50%",
-    width = 500,
+    width,
     open,
     handleClose,
     component,
@@ -59,7 +59,7 @@ export default function ModelReusable({
                 open={open}
                 onClose={handleClose}
             >
-                <Box sx={style}>
+                <Box sx={style} maxWidth={width}>
                     <Typography id="modal-modal-title" variant="h6" component="h2">
                         {title}
                     </Typography>

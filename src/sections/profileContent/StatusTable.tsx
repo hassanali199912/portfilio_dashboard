@@ -117,6 +117,7 @@ export default function StatusTable() {
                                 <StyledTableCell align="center">{row.Bg_Color}</StyledTableCell>
                                 <StyledTableCell align="center">
                                     <DropdownMenu
+                                        rowId=''
                                         options={menuOptions}
                                         handleChoice={handleChoice}
                                     />

@@ -14,10 +14,7 @@ import PortfolioCreate from 'src/sections/portilioSection/PortfolioCreate';
 // ----------------------------------------------------------------------
 
 export const DashboardPage = lazy(() => import('src/pages/dashboard'));
-export const BlogPage = lazy(() => import('src/pages/blog'));
-export const UserPage = lazy(() => import('src/pages/user'));
 export const SignInPage = lazy(() => import('src/pages/sign-in'));
-export const ProductsPage = lazy(() => import('src/pages/products'));
 export const Page404 = lazy(() => import('src/pages/page-not-found'));
 export const Blank = lazy(() => import('src/pages/blank'));
 export const SectionsControlls = lazy(() => import('src/pages/Sections'));
@@ -29,6 +26,7 @@ export const ContactSection = lazy(() => import('src/pages/contactSection'));
 export const GlobalSetting = lazy(() => import('src/pages/GlobalSetting'));
 export const PortfolioDetails = lazy(() => import('src/pages/PortfolioDetails'));
 export const SkillsSection = lazy(() => import('src/pages/SkillsSection'));
+export const ExperienceSection = lazy(() => import('src/pages/Experience'));
 
 
 
@@ -63,14 +61,9 @@ export const routesSection: RouteObject[] = [
     ),
     children: [
       { index: true, element: <DashboardPage /> },
-      { path: 'user', element: <UserPage /> },
-      { path: 'products', element: <ProductsPage /> },
-      { path: 'blog', element: <BlogPage /> },
       { path: 'blank', element: <Blank /> },
-
       { path: 'sections', element: <SectionsControlls /> },
       { path: 'global', element: <GlobalSetting /> },
-
       { path: 'profile-content', element: <ProfileContent /> },
       { path: 'about-section', element: <AboutSection /> },
       { path: 'work-section', element: <WorkProgressSection /> },
@@ -79,6 +72,7 @@ export const routesSection: RouteObject[] = [
       { path: 'portfolio-section/create', element: <PortfolioCreate /> },
       { path: 'contact-section', element: <ContactSection /> },
       { path: 'skills-section', element: <SkillsSection /> },
+      { path: 'experience', element: <ExperienceSection /> },
     ],
   },
   {

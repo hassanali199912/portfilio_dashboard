@@ -6,6 +6,7 @@ import SocialReducers from "./slices/social"
 import ProfileReducers from "./slices/profile"
 import PortfolioReducers from "./slices/portfolio"
 import SkillsReducers from "./slices/skills"
+import ExperienceReducers from "./slices/experience"
 
 
 export const store = configureStore({
@@ -15,7 +16,8 @@ export const store = configureStore({
         social: SocialReducers,
         profile: ProfileReducers,
         portfolio: PortfolioReducers,
-        skills: SkillsReducers
+        skills: SkillsReducers,
+        experience: ExperienceReducers
     }
 });
 
