@@ -58,7 +58,7 @@ const globalSlice = createSlice({
 
 export const GetGlobalById = createAsyncThunk("global/getById", async (_, ThunkApi) => {
     try {
-        return (await Api.get("/global/6952adc6fb5c0ad0979ff39d")).data;
+        return (await Api.get("/global/69dd8d3ce976636fa1402043")).data;
     } catch (error) {
         return ThunkApi.rejectWithValue(error)
     }
@@ -66,7 +66,7 @@ export const GetGlobalById = createAsyncThunk("global/getById", async (_, ThunkA
 
 export const UpdateGlobalSetting = createAsyncThunk("global/update", async (data: Partial<GlobalSetting>, ThunkApi) => {
     try {
-        return (await Api.put("/global/6952adc6fb5c0ad0979ff39d", data)).data;
+        return (await Api.put("/global/69dd8d3ce976636fa1402043", data)).data;
     } catch (error) {
         return ThunkApi.rejectWithValue(error)
     }
