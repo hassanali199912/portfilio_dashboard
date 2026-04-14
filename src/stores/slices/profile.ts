@@ -52,7 +52,7 @@ export const GetProfileContentById = createAsyncThunk(
   async (_, thunkApi) => {
     try {
       return (
-        await Api.get("/profile-content/695598ca74f0fa8336a3722a")
+        await Api.get("/profile-content/69dd8d44e976636fa1402045")
       ).data;
     } catch (error) {
       return thunkApi.rejectWithValue(error);
@@ -66,7 +66,7 @@ export const UpdateProfileContent = createAsyncThunk(
     try {
       return (
         await Api.put(
-          "/profile-content/695598ca74f0fa8336a3722a",
+          "/profile-content/69dd8d44e976636fa1402045",
           data
         )
       ).data;
