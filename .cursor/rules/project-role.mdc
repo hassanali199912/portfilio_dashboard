@@ -1,0 +1,105 @@
+---
+description: Portfolio dashboard project role, architecture, and conventions
+alwaysApply: true
+---
+
+# Portfolio Dashboard — Project Role
+
+Admin CMS for managing Hassan Ali's portfolio website content. Built on Minimal UI Kit (MUI + Vite), customized for CRUD over a remote REST API.
+
+## Tech Stack
+
+- **Frontend**: React 19, TypeScript, Vite 6 (port `3039`), MUI 7, Emotion
+- **State**: Redux Toolkit (`createSlice`, `createAsyncThunk`)
+- **Routing**: React Router 7 (lazy-loaded pages, `DashboardLayout`)
+- **Forms**: React Hook Form + Zod (`@hookform/resolvers/zod`)
+- **HTTP**: Axios via `src/config/api.config.ts` → base URL `https://protfilio-backend.vercel.app/api`
+- **Path alias**: `src/` (configured in `vite.config.ts` and `tsconfig.json`)
+
+## Folder Structure
+
+```
+src/
+├── pages/           # Thin route wrappers (set title, render section)
+├── sections/        # Feature UI and business logic
+├── stores/
+│   ├── index.ts     # configureStore + RootState/AppDispatch types
+│   └── slices/      # One slice per domain (async thunks + reducers)
+├── schemas/         # Zod schemas + inferred TypeScript types
+├── components/      # Shared UI (FormLayouts, TableResued, ModelResuble, etc.)
+├── layouts/         # DashboardLayout, AuthLayout, nav configs
+├── routes/          # Route definitions (sections.tsx), hooks, error boundary
+├── theme/           # MUI theme (palette, typography, shadows)
+├── context/         # ToastProvider
+├── hooks/           # Custom hooks (useToast)
+└── config/          # api.config.ts
+```
+
+## Redux Domains
+
+| Slice key   | File                  | Domain                          |
+|-------------|-----------------------|---------------------------------|
+| `section`   | slices/sections.ts    | Section visibility toggles      |
+| `global`    | slices/global.ts      | Global settings (contact, CV)   |
+| `social`    | slices/social.ts      | Social media links              |
+| `profile`   | slices/profile.ts     | Profile/hero content            |
+| `portfolio` | slices/portfolio.ts   | Portfolio projects (CRUD)       |
+| `skills`    | slices/skills.ts      | Skills section                  |
+| `experience`| slices/experience.ts  | Work experience                 |
+
+Slice pattern: `{ loading, data, error }` initial state → `createAsyncThunk` API calls → `extraReducers` for pending/fulfilled/rejected.
+
+## Routes & Navigation
+
+Routes live in `src/routes/sections.tsx`. Nav items in `src/layouts/nav-config-dashboard.tsx`. When adding a page, update **both** files.
+
+| Path                      | Page / Section              |
+|---------------------------|-----------------------------|
+| `/`                       | Dashboard (analytics)       |
+| `/sections`               | Section visibility          |
+| `/global`                 | Global settings + social    |
+| `/profile-content`        | Profile content             |
+| `/about-section`          | About section               |
+| `/work-section`           | Work process section        |
+| `/portfolio-section`      | Portfolio list              |
+| `/portfolio-section/:id`  | Portfolio details           |
+| `/portfolio-section/create` | Portfolio create          |
+| `/contact-section`        | Contact section             |
+| `/skills-section`         | Skills section              |
+| `/experience`             | Experience section          |
+
+## Reusable Patterns
+
+- **Forms**: `FormLayouts<T>` + Zod schema + `FormLayoutItem[]` layout config
+- **Tables**: `ReusableTable<T>` with columns, actions (edit/toggle/delete), create button
+- **Modals**: `ModelReusable` wrapping forms or confirm dialogs
+- **Toasts**: `useToast()` → `showSuccess`, `showError`, etc.
+- **Page shell**: Wrap content in `<DashboardContent maxWidth="xl">`
+- **Bilingual fields**: `{ ar: string; en: string }` (`LocalizedText`) for portfolio items
+
+## Adding a New Section (Checklist)
+
+1. Create Zod schema in `src/schemas/`
+2. Create Redux slice in `src/stores/slices/`, register in `src/stores/index.ts`
+3. Build UI in `src/sections/<name>/index.tsx`
+4. Add thin page in `src/pages/`
+5. Lazy-import page + add route in `src/routes/sections.tsx`
+6. Add nav entry in `src/layouts/nav-config-dashboard.tsx`
+
+## Conventions
+
+- Match existing slice/thunk naming: `GetAllX`, `CreateX`, `UpdateX`, `DeleteX`, `ChangeVisiablillity`
+- API responses use `{ success, data }` shape; check `res.payload.success` after dispatch
+- Use MUI `sx` prop for styling; theme vars via `minimal-shared/utils`
+- Do **not** rename existing typos unless explicitly asked: `portilioSection`, `porfolitoSection`, `ModelResuble`, `TableResued`, `workPorgressSection`
+- Keep pages thin; put logic in sections and Redux slices
+- Minimize scope — one focused change per task
+
+## Commands
+
+```bash
+yarn dev          # Start dev server (localhost:3039)
+yarn build        # tsc + vite build
+yarn lint:fix     # ESLint auto-fix
+yarn fm:fix       # Prettier format
+```

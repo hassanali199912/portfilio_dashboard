@@ -4,6 +4,7 @@ import { MdRoundaboutRight } from "react-icons/md";
 import { VscServerProcess } from "react-icons/vsc";
 import { MdOutlineContactEmergency } from "react-icons/md";
 import { FaEye } from "react-icons/fa";
+import { RiArticleLine } from "react-icons/ri";
 
 import { Label } from 'src/components/label';
 import { SvgColor } from 'src/components/svg-color';
@@ -72,6 +73,11 @@ export const navData = [
     title: 'Experience Section',
     path: '/experience',
     icon: <MdOutlineContactEmergency />,
+  },
+  {
+    title: 'Blog Section',
+    path: '/blog-section',
+    icon: <RiArticleLine />,
   },
 
 ];

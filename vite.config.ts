@@ -26,6 +26,18 @@ export default defineConfig({
   resolve: {
     alias: [
       {
+        find: /^pages\/(.+)/,
+        replacement: path.resolve(process.cwd(), 'src/pages/$1'),
+      },
+      {
+        find: /^layouts\/(.+)/,
+        replacement: path.resolve(process.cwd(), 'src/layouts/$1'),
+      },
+      {
+        find: /^sections\/(.+)/,
+        replacement: path.resolve(process.cwd(), 'src/sections/$1'),
+      },
+      {
         find: /^src(.+)/,
         replacement: path.resolve(process.cwd(), 'src/$1'),
       },

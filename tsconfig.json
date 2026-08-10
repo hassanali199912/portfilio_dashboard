@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     /* Bundler */
-    "baseUrl": ".",
+    "paths": {
+      "pages/*": ["./src/pages/*"],
+      "layouts/*": ["./src/layouts/*"],
+      "sections/*": ["./src/sections/*"]
+    },
     "module": "ESNext",
     "jsx": "react-jsx",
     "allowJs": true,
