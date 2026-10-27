@@ -30,6 +30,7 @@ export const ExperienceSection = lazy(() => import('pages/Experience'));
 export const BlogSection = lazy(() => import('pages/blogSection'));
 export const BlogCreatePage = lazy(() => import('sections/blogSection/BlogCreate'));
 export const BlogDetails = lazy(() => import('pages/BlogDetails'));
+export const TailoredCvPage = lazy(() => import('pages/TailoredCv'));
 const renderFallback = () => (
   <Box
     sx={{
@@ -76,6 +77,7 @@ export const routesSection: RouteObject[] = [
       { path: 'blog-section', element: <BlogSection /> },
       { path: 'blog-section/create', element: <BlogCreatePage /> },
       { path: 'blog-section/:id', element: <BlogDetails /> },
+      { path: 'tailored-cv', element: <TailoredCvPage /> },
     ],
   },
   {

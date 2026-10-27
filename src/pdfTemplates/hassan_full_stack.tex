@@ -1,0 +1,220 @@
+%------------PACKAGES----------------
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{verbatim} 
+\usepackage{titlesec} 
+\usepackage{color} 
+\usepackage{enumitem} 
+\usepackage{fancyhdr} 
+\usepackage{tabularx} 
+\usepackage{latexsym} 
+\usepackage{marvosym} 
+\usepackage[empty]{fullpage} 
+\usepackage[hidelinks]{hyperref} 
+\usepackage{fontawesome5} 
+\usepackage[normalem]{ulem} 
+\usepackage[english]{babel} 
+\usepackage{fontawesome5}
+
+\hypersetup{
+    colorlinks=false,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Hassan Ali - {{JOB_TITLE}}},
+    pdfpagemode=FullScreen,
+}
+
+\input glyphtounicode 
+\pdfgentounicode=1 
+
+\usepackage[default]{sourcesanspro} 
+\urlstyle{same} 
+
+\pagestyle{fancy} 
+\fancyhf{} 
+\renewcommand{\headrulewidth}{0in} 
+\renewcommand{\footrulewidth}{0in} 
+\setlength{\tabcolsep}{0in} 
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\topmargin}{-0.5in}
+\addtolength{\textwidth}{1.0in} 
+\addtolength{\textheight}{1.0in} 
+\raggedbottom{} 
+\raggedright{} 
+\setlength{\footskip}{30pt}
+
+\titleformat{\section}
+  {\scshape\large}{}
+    {0em}{\color{blue}}[\color{black}\titlerule\vspace{0pt}]
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand{\ULdepth}{2pt}
+
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[rightmargin=0.11in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
+\newcommand{\resumeSectionType}[3]{\item\begin{tabular*}{0.96\textwidth}[t]{p{0.15\linewidth}p{0.02\linewidth}p{0.81\linewidth}}\textbf{#1} & #2 & #3\end{tabular*}\vspace{-2pt}}
+\newcommand{\resumeTrioHeading}[3]{\item\small{\begin{tabular*}{0.96\textwidth}[t]{l@{\extracolsep{\fill}}c@{\extracolsep{\fill}}r}\textbf{#1} & \textit{#2} & #3\end{tabular*}}}
+\newcommand{\resumeQuadHeading}[4]{\item\begin{tabular*}{0.96\textwidth}[t]{l@{\extracolsep{\fill}}r}\textbf{#1} & #2 \\ \textit{\small#3} & \textit{\small #4} \\ \end{tabular*}}
+\newcommand{\resumeQuadHeadingChild}[2]{\item\begin{tabular*}{0.96\textwidth}[t]{l@{\extracolsep{\fill}}r}\textbf{\small#1} & {\small#2} \\ \end{tabular*}}
+\newcommand{\resumeHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeHeadingListEnd}{\end{itemize}}
+
+\begin{document}
+
+%-----------CONTACT DETAILS------------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\Huge Hassan Ali Hassan} & \faMapMarker~Cairo, Egypt \\
+  \textit{\LARGE {{JOB_TITLE}}} & +20 155 388 0080 \\
+  \faGithub~\href{https://github.com/hassanali199912}{GitHub} \quad
+  \faLinkedin~\href{https://www.linkedin.com/in/hassan-ali-510b39192/}{LinkedIn} \quad
+  \faUser~\href{https://hassanalihssan-livid.vercel.app/}{Portfolio}
+  &
+  hassanalihassan1203@gmail.com \\
+  &
+  \href{https://drive.google.com/drive/folders/1s7unjuxPCzSHQf4cILxs3VPabplr8ubY?usp=sharing/}{Certificates} \\
+\end{tabular*}
+
+%-----------SUMMARY--------------------------
+\section{Professional Summary}
+\small{
+{{SUMMARY}}
+}
+
+%-----------EDUCATION-------------------------
+\section{Education}
+\resumeHeadingListStart{}
+  \resumeQuadHeading
+    {ITI 9-Month Diploma: Professional Training Program (PTP)} { Information Technology Institute (ITI)}
+    {Professional Development \& BI-infused CRM}{Oct 2024 -- Jul 2025 }
+    
+  \resumeQuadHeading{Bachelor of Information Technology}{Egyptian E-Learning University}
+  {Modules: Web Engineering, AI, Security, IT Fundamentals | GPA: 3.49 (Very Good)}{2018 -- 2022, Assuit}
+\resumeHeadingListEnd{}
+
+%-----------EXPERIENCE-----------------------
+\section{Experience}
+\resumeHeadingListStart{}
+\resumeQuadHeading{Software Engineer}{Jan 2026 -- Present}{sahelBooks}{Invoice CRM System}
+  \resumeItemListStart{}
+  \resumeItem{Design and maintain UI features using React and TypeScript, and convert Figma screens to code}
+
+\resumeItem{Developed and maintained backend services, RESTful APIs, and database integrations to support scalable web applications..}
+  \resumeItemListEnd{}
+\resumeQuadHeading{Software Engineer}{May 2025 -- Dec 2025}{InformaCore Technologies}{Saudi Ministry of Justice Project - Amicable Settlement (Weddi)}
+  \resumeItemListStart{}
+  \resumeItem{Implemented modular front-end features using React and TypeScript to enhance functionality and user experience.}
+\resumeItem{Resolved front-end issues and refactored legacy components to improve code quality, stability, and maintainability.}
+\resumeItem{Developed and maintained backend services, RESTful APIs, and database integrations to support scalable web applications..}
+  \resumeItemListEnd{}
+
+\resumeQuadHeading{Full Stack Developer}{Aug 2023 -- Aug 2024}{TopGrowth}{Educational and other company projects}
+  \resumeItemListStart{}
+  \resumeItem{Build and deployed new platform features using React, Node.js, Express, and MongoDB, ensuring smooth functionality and stable release performance.}
+\resumeItem{Enhanced user interface components and optimized backend logic to improve usability, responsiveness, and system efficiency.}
+
+  \resumeItemListEnd{}
+\resumeHeadingListEnd{}
+
+%--------------TECHNICAL SKILLS------------------------
+\section{Technical Skills}
+\resumeHeadingListStart{}
+{{SKILLS}}
+\resumeHeadingListEnd{}
+
+%-----------PROJECTS--------------------------
+\section{Projects}
+\resumeHeadingListStart{}
+\resumeTrioHeading{Balance — Rele State Website (11/2024)}{React.js, Tailwind CSS}{}
+  \resumeItemListStart{}
+\resumeItem{Developed a responsive real estate platform enabling users to browse, filter, and view property details with optimized performance and modern UI components.}
+  \resumeItemListEnd{}
+\resumeTrioHeading{Weddi — Friendly Settlement for Labor Disputes (05/2024)}{React.js, Tailwind CSS}{}
+  \resumeItemListStart{}
+\resumeItem{Built core front-end modules for a digital dispute-resolution system, improving accessibility, workflow efficiency, and user experience for large-scale legal operations.}
+  \resumeItemListEnd{}
+
+\resumeTrioHeading{Real Estate Consulting Website}{React.js, Bootstrap, Node.js, Express, MongoDB}{}
+  \resumeItemListStart{}
+\resumeItem{Created a full-stack consulting platform allowing clients to request, track, and manage real estate consultations with secure API integrations and dynamic content rendering.}
+  \resumeItemListEnd{}
+
+\resumeTrioHeading{Task Management System (02/2025 -- 03/2025)}{.NET MVC, C\#, Bootstrap}{}
+  \resumeItemListStart{}
+\resumeItem{Developed an MVC task management application with real-time chat features, improving team coordination and workflow automation.}
+  \resumeItemListEnd{}
+
+\resumeTrioHeading{Spacecavez — Education Platform (08/2023)}{React.js, Node.js, MongoDB}{}
+  \resumeItemListStart{}
+\resumeItem{Built an online learning platform delivering structured educational content with secure authentication, course management, and scalable backend services.}
+  \resumeItemListEnd{}
+
+\resumeTrioHeading{Topgrowth Agency (10/2023)}{React.js, Node.js, MongoDB}{}
+  \resumeItemListStart{}
+\resumeItem{Developed dynamic marketing service modules and admin dashboards, enhancing content management and improving client engagement workflows.}
+  \resumeItemListEnd{}
+
+\resumeTrioHeading{TTN — Productivity Tools}{Bootstrap, JavaScript}{}
+  \resumeItemListStart{}
+\resumeItem{Created a suite of lightweight productivity tools, including task tracking, time management, and note-taking utilities, focusing on usability and clean UI.}
+  \resumeItemListEnd{}
+
+\resumeTrioHeading{Blog Website}{React.js, Bootstrap, Node.js, MongoDB}{}
+  \resumeItemListStart{}
+\resumeItem{Built a full-featured blogging system with user authentication, article CRUD operations, and an admin dashboard for content moderation.}
+  \resumeItemListEnd{}
+\resumeHeadingListEnd{}
+
+%-----------INTERNSHIPS-----------------------
+\section{Internships}
+\resumeHeadingListStart{}
+\resumeQuadHeading{ITI — Web Development Using ASP.NET}{Oct 2024 -- Jun 2025}{9-Month Training Program}{Assuit, Egypt}
+\resumeQuadHeading{DEPI — MERN Stack Training}{Apr 2024 -- Oct 2024}{6-Month Training}{Assuit, Egypt}
+\resumeQuadHeading{Ministry of Communications And IT — PHP/Laravel}{Nov 2022 -- Jan 2023}{Training}{Assuit, Egypt}
+\resumeQuadHeading{ITI — Front-end Development Using Angular}{Jul 2021 -- Aug 2021}{Summer Training}{Assuit, Egypt}
+\resumeQuadHeading{ITI — Soft Skills And Freelancing Program}{24-Hour Training}{Assuit, Egypt}{}
+\resumeHeadingListEnd{}
+
+%-----------Volunteering-------------------------
+
+\section{Volunteering}
+\resumeHeadingListStart{}
+\resumeQuadHeading{Front End Training Lead}{January 2025 -- April 2025}
+  {Information Technology Institute (ITI) - Assiut Intake 45}{Assiut, Egypt}
+    \resumeItemListStart{}
+      \resumeItem{Supervised front-end development tasks for ITI colleagues, reviewed code submissions, and ensured adherence to best practices and clean coding standards.}
+\resumeItem{Guided React concepts, UI patterns, and practical front-end techniques, helping colleagues improve code quality and problem-solving efficiency.}
+    \resumeItemListEnd{}
+
+\resumeQuadHeading{Technical Speaker At GDES }{Mar 2021 -- Oct 2022}
+  {Egyptian E-Learning University}{Assiut, Egypt}
+    \resumeItemListStart{}
+      \resumeItem{Conducted sessions to discuss modern web technologies.}
+      \resumeItem{I participated in organizing a marathon to help students participate in Google's Solution Change competitions.}
+    \resumeItemListEnd{}
+\resumeHeadingListEnd{}
+
+
+
+%----------------OTHERS----------------------
+% You can add your achievements, accolades, certifications, etc. here.
+\section{Awards and Competitions}
+  \resumeItemListStart{}
+    \resumeItem{ACPC 2019 \href{https://drive.google.com/file/d/1n84Gtl-30TAsqo2QekTIM6h-utKWilNZ/view?usp=sharing}{\faLink} – Ranked 60st among 400 teams.}
+    
+    \resumeItem{ACPC 2020  \href{https://drive.google.com/file/d/1Kyyc0ylhSIeRt7tUaI9EV69nKHcJgAtX/view?usp=sharing}{\faLink} – Secured 40th position out of 425 teams.}
+    
+
+  \resumeItemListEnd{}
+
+
+%-----------LANGUAGES-------------------------
+\section{Languages}
+\resumeHeadingListStart{}
+  \resumeSectionType{Arabic}{:}{Native}
+  \resumeSectionType{English}{:}{Intermediate}
+\resumeHeadingListEnd{}
+
+
+\end{document}

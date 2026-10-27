@@ -5,6 +5,7 @@ import { VscServerProcess } from "react-icons/vsc";
 import { MdOutlineContactEmergency } from "react-icons/md";
 import { FaEye } from "react-icons/fa";
 import { RiArticleLine } from "react-icons/ri";
+import { HiOutlineDocumentText } from "react-icons/hi";
 
 import { Label } from 'src/components/label';
 import { SvgColor } from 'src/components/svg-color';
@@ -78,6 +79,11 @@ export const navData = [
     title: 'Blog Section',
     path: '/blog-section',
     icon: <RiArticleLine />,
+  },
+  {
+    title: 'Tailored CV',
+    path: '/tailored-cv',
+    icon: <HiOutlineDocumentText />,
   },
 
 ];

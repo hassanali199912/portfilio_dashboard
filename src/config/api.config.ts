@@ -2,9 +2,10 @@
 
 import axios from "axios"
 
+export const API_BASE_URL = "http://localhost:5001/api"
 
 axios.interceptors.request.use(function (config) {
-    config.baseURL = "https://protfilio-backend.vercel.app/api"
+    config.baseURL = API_BASE_URL
     return config;
 }, function (error) {
     return Promise.reject(error);
