@@ -46,8 +46,9 @@ src/
 | `portfolio` | slices/portfolio.ts   | Portfolio projects (CRUD)       |
 | `skills`    | slices/skills.ts      | Skills section                  |
 | `experience`| slices/experience.ts  | Work experience                 |
+| `blog`      | slices/blog.ts        | Blog posts (CRUD + selected)    |
 
-Slice pattern: `{ loading, data, error }` initial state → `createAsyncThunk` API calls → `extraReducers` for pending/fulfilled/rejected.
+Slice pattern: `{ loading, data, error }` initial state → `createAsyncThunk` API calls → `extraReducers` for pending/fulfilled/rejected. Blog also keeps `selected` for the details page.
 
 ## Routes & Navigation
 
@@ -67,6 +68,11 @@ Routes live in `src/routes/sections.tsx`. Nav items in `src/layouts/nav-config-d
 | `/contact-section`        | Contact section             |
 | `/skills-section`         | Skills section              |
 | `/experience`             | Experience section          |
+| `/blog-section`           | Blog list                   |
+| `/blog-section/create`    | Blog create                 |
+| `/blog-section/:id`       | Blog details                |
+
+Blog API calls go to `/blog` (list, get, create, update, delete, `GET /blog/visible/:id`). That route is not mounted on the backend yet; add it there before expecting these calls to succeed.
 
 ## Reusable Patterns
 
@@ -75,7 +81,8 @@ Routes live in `src/routes/sections.tsx`. Nav items in `src/layouts/nav-config-d
 - **Modals**: `ModelReusable` wrapping forms or confirm dialogs
 - **Toasts**: `useToast()` → `showSuccess`, `showError`, etc.
 - **Page shell**: Wrap content in `<DashboardContent maxWidth="xl">`
-- **Bilingual fields**: `{ ar: string; en: string }` (`LocalizedText`) for portfolio items
+- **Bilingual fields**: `{ ar: string; en: string }` (`LocalizedText`) for portfolio and blog
+- **Rich text**: blog body uses `src/components/RichTextEditor.tsx` inside `BlogForm`
 
 ## Adding a New Section (Checklist)
 

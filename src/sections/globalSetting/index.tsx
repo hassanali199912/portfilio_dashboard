@@ -162,10 +162,10 @@ export default function Index() {
     const handelCloseSocial = () => setOpenFormSocial(false)
     const onSubmitSocial = (data: Partial<socialMediaData>) => {
 
-        if (selectedMedia !== null) {
+        if (selectedMedia._id) {
             const updatedObject = {
                 data: data,
-                id: selectedMedia._id || ""
+                id: selectedMedia._id
             }
             dispatch(UpdateMedia(updatedObject)).then(res => {
                 if (res.payload.success) {
